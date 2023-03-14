@@ -1,0 +1,90 @@
+<div  id="newInvoiceDiv1">
+    <div class="insideInvoiceDiv">
+        <h1 id="newInvoiceHead">Edit #<%=object1.id%></h1>
+        <h3 class="newInvoiceDivText1 personId">Bill From</h3>
+      <form action="/viewInvoice" method="post">
+           <p class="color1 invoiceText1">Street Address</p>
+           <input type="text" class="inputDiv1" required value="<%=object1.senderAddress.street%>" name="senderAddressstreet">
+        <div class="citydiv">
+            <p class="color1 invoiceText1">City</p>
+            <p class="color1 invoiceText1">Post Code</p>
+            <p class="color1 invoiceText1">Country</p>
+            <input type="text" class="inputDiv1" required  value="<%=object1.senderAddress.city%>" name="senderAddresscity">
+            <input type="text" class="inputDiv1" required value="<%=object1.senderAddress.postCode%>" name="senderAddresspostcode">
+            <input type="text" class="inputDiv1" required value="<%=object1.senderAddress.country%>" name="senderAddresscountry">
+         </div>
+         <h3 class="newInvoiceDivText1 personId">Bill To</h3>
+            <p class="color1 invoiceText1">Client's Name</p>
+            <input type="text" class="inputDiv1" required value="<%=object1.clientName%>" name="clientName">
+            <p class="color1 invoiceText1">Client's Email</p>
+            <input type="text" class="inputDiv1" required value="<%=object1.clientEmail%>" name="clientEmail">
+            <p class="color1 invoiceText1" >Street Address</p>
+            <input type="text" class="inputDiv1" required value="<%=object1.clientAddress.street%>"name="clientAddressstreet">
+         <div class="citydiv">
+            <p class="color1 invoiceText1">City</p>
+            <p class="color1 invoiceText1">Post Code</p>
+            <p class="color1 invoiceText1">Country</p>
+            <input type="text" class="inputDiv1" required value="<%=object1.clientAddress.city%>" name="clientAddresscity">
+            <input type="text" class="inputDiv1" required value="<%=object1.clientAddress.postCode%>" name="clientAddresspostCode">
+            <input type="text" class="inputDiv1" required value="<%=object1.clientAddress.country%>" name="clientAddresscountry">
+         </div>
+         <div class="date_div">
+            <p class="color1 invoiceText1">Invoice Date</p>
+            <p class="color1 invoiceText1">Payment Terms</p>
+            <input type="date" class="inputDiv1" required value="<%=object1.createdAt%>" name="invoiceDate">
+            <select name="paymentTerm" name="paymentTerm" value="<%=object1.paymentTerms%>" id="paymentTerm">
+                <%if(object1.paymentTerms==1){%>
+                <option value="1" selected>Net 1 Day</option>
+               <option value="7">Net 7 Days</option>
+               <option value="14">Net 14 Days</option>
+               <option value="30">Net 30 Days</option>
+                <%}%>
+                <%if(object1.paymentTerms==7){%>
+                    <option value="1" >Net 1 Day</option>
+                   <option value="7" selected>Net 7 Days</option>
+                   <option value="14">Net 14 Days</option>
+                   <option value="30">Net 30 Days</option>
+                    <%}%>
+                    <%if(object1.paymentTerms==14){%>
+                        <option value="1" >Net 1 Day</option>
+                       <option value="7" >Net 7 Days</option>
+                       <option value="14" selected>Net 14 Days</option>
+                       <option value="30">Net 30 Days</option>
+                        <%}%>
+                        <%if(object1.paymentTerms==30){%>
+                            <option value="1" >Net 1 Day</option>
+                           <option value="7" >Net 7 Days</option>
+                           <option value="14" >Net 14 Days</option>
+                           <option value="30" selected>Net 30 Days</option>
+                        <%}%>
+             </select>
+         </div>
+            <p class="color1 invoiceText1">Project Description</p>
+            <input type="text" class="inputDiv1" value="<%=object1.description%>" name="description">
+            <h2 class="ItemList">Item List</h2>
+         <div class="grid_itemDiv">
+            <p class="color1 invoiceText1">ItemName</p>
+            <p class="color1 invoiceText1">Qty.</p>
+            <p class="color1 invoiceText1">Price</p>
+            <p class="color1 invoiceText1">Total</p>
+         </div>
+         <div class="itemListWholeDiv">
+            <p></p>
+            <%object1.items.forEach(person=>{%>    
+         <div class="grid_itemDiv">
+            <input type="text"  class="inputDiv1" required value="<%=person.name%>" name="name"/>
+            <input type="number" min="1" class="inputDiv1" required value="<%=person.quantity%>" name="quantity"/>
+            <input type="number" min="1" class="inputDiv1" required value="<%=person.price%>" name="price"/>
+            <div class="inputDiv1 total"><%=Number(person.quantity)*Number(person.price)%></div>
+            <i class="fa-solid fa-trash" onclick="trash(this)"></i>
+         </div>
+         <%});%>
+      </div>
+         <div class="addItem">+ Add New Item</div>
+    </div>
+    <div class="cancelsaveDiv">
+      <div class="editDeleteDiv2 edit Cancel" style="height: 26px">Cancel</div>
+      <input type="submit" value="Save Changes" class="editDeleteDiv2 markas" style="height: 56px"/>
+    </div>
+   </form>
+</div>

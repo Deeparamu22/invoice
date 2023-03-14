@@ -1,0 +1,8 @@
+<div class="alertDiv">
+    <h1>Confirm Deletion</h1>
+    <p class="color1 description" style="font-size: 17px;line-height: 32px">Are you sure you want to delete invoice #<%=object1.id%>. This action cannot be undone.</p>
+    <div class="cancelsaveDiv">
+        <div class="editDeleteDiv1 edit" id="cancel">Cancel</div>
+        <a href="index?id=<%=object1.id%>" onclick="window.location.href=''"><div class="editDeleteDiv1 delete" onclick="alertDivshow()">Delete</div></a>
+    </div>
+</div>

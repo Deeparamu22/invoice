@@ -1,0 +1,626 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan&display=swap');
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.whole_container{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 17fr;
+    overflow: hidden;
+    font-family: 'League Spartan', sans-serif;
+}
+#side_div{
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  background-color: #373B53;
+  display: grid;
+  grid-template-rows: 10% 6fr 1fr 1fr;
+  z-index: 3;
+}
+#icon_div{
+    width: 100%;
+    height: 100%; 
+    background-color: #7C5DFA;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;  
+}
+#icon_div2{
+    width: 100%;
+    height: 100%; 
+    background-color: #9277FF;
+    border-bottom-right-radius: 30px;
+    border-top-left-radius: 30px;
+    grid-row-end: -1;
+}
+#logo_image{
+    width: 43%;
+    height: 82%;
+    margin-left: 24px;
+    margin-top: -22px;
+}
+#themeicon{
+    width: 60%;
+    height: 60%;
+    border-bottom: 2px solid gray;
+    grid-row-end: -2;
+    padding-left: 40%;
+    padding-top: 40%;
+}
+#avatar{
+  grid-row-end: -1;
+  border-radius: 50%;
+  margin-left: 19%;
+  margin-top: 20%;
+  width: 56%;
+}
+#main_div{
+    width: 75%;
+    margin-top: 5%;
+    height: 90%;
+    margin-left: 13%;
+    display: grid;
+    grid-template-rows: 100px 900px;
+    z-index: 1;
+}
+#head_div{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    grid-column-gap: 25px;
+}
+#newInvoice{
+    width: 100%;
+    height: 83%;
+    background-color: #9277FF;
+    border-radius: 40px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 25px;
+    cursor: pointer;
+}
+#plusDiv{
+    width: 70%;
+    height: 70%;
+    border: none;
+    background-color: aliceblue;
+    border-radius: 40px;
+    margin-top: 15%;
+    margin-left: 15%;
+    color: #7C5DFA;
+    font-size: 30px;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#invoiceText{
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    line-height: 15px;
+    letter-spacing: -0.25px;
+    font-weight: bolder;
+}
+#filter{
+    display: flex;
+}
+#filterPara{
+    font-size: 27px;
+    font-weight: bolder;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.filterSymbol{
+    font-size: 22px;
+    font-weight: bolder;
+    margin: auto;
+    color: #7C5DFA;
+}
+h1{
+  font-weight: bold;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+count{
+    line-height: 15px;
+    color: #888EB0;
+}
+#body_div{
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+.smallDiv
+{
+  width: 99%;
+  height: 129px;
+  border: none;
+  box-shadow: rgb(0 0 0 / 10%) 0px 20px 25px -5px, rgb(0 0 0 / 4%) 0px 10px 10px -5px;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(5,2fr) 1fr;
+  justify-items: center;
+  align-items: center;
+  border-radius: 15px;
+}
+.smallDiv:hover{
+    border: 2px solid #7C5DFA;
+}
+.color1{
+    color: #7E88C3;
+    line-height: 15px;
+    font-size: 14.5px;
+}
+.dueDate{
+  font-size: 19.5px;
+}
+.clientName{
+  font-size: 21.5px;
+}
+.invoiceText1{
+  
+  font-size: 17.5px;
+  height: 23px;
+
+}
+.idStyle{
+    font-weight: bolder;
+    font-size: 18px;
+}
+.totalStyle{
+    text-align: right;
+    font-weight: bold;
+    font-size: 24px;
+}
+.status{
+    width: 70%;
+    height: 58px;
+    background: rgba(51,214,159,0.08);
+    border-radius: 10px;
+    color: #33D69F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+}
+.fa-chevron-right{
+    color: #7C5DFA;
+    font-size: 19px;
+}
+.fa-chevron-left{
+    color: #7C5DFA;
+    font-size: 19px;
+}
+.fa-circle{
+    font-size: 13px;
+}
+.filterBox{
+  width: 210px;
+  height: 125px;
+  background-color: #FFFFFF;
+  position: absolute;
+  top: 174px;
+  padding-top: 43px;
+  left: 1152px;
+  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+  border-radius: 10px;
+  padding-left: 30px;
+}
+.displayclass{
+    display: none;
+}
+    input[type=checkbox] {
+        accent-color:#7C5DFA;
+        width: 20px;
+        height: 20px;
+        background-color: #DFE3FA;
+    }
+  input[type=checkbox]:hover {
+    border-color:#7C5DFA;
+    
+  }
+  ul{
+    list-style: none;
+  }
+  li{
+    padding-bottom: 15px;
+  }
+  label{
+    padding-left: 10px;
+    font-weight: bold;
+    font-size: 23px;
+    letter-spacing: 1.3px;
+  }
+  #newInvoiceDiv{
+    display: none;
+    width: 35%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 0px;
+    left: 60px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    overflow-y: scroll;
+    z-index: 2;
+  }
+  #newInvoiceDiv1{
+    display: none;
+    width: 35%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 0px;
+    left: 60px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    overflow-y: scroll;
+    z-index: 2;
+  }
+  .insideInvoiceDiv
+  {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    margin-left: 12%;
+    margin-top: 23px;
+  }
+  .citydiv{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 20px 1fr;
+    grid-gap: 10px;
+  }
+  .date_div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 28px 1fr;
+    grid-gap: 10px;
+  }
+  a:hover, a:visited, a:link, a:active
+  {
+      text-decoration: none;
+      color: black;
+  }
+  .view_invoice_page{
+    width: 67%;
+    margin-top: 2%;
+    height: 95%;
+    margin-left: 13%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 7fr;
+    grid-gap: 13px;
+  }
+  .goBackClass{
+    height: 100%;
+    width: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .statusEditDiv{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+    border-radius: 10px;
+  }
+  .statusDiv{
+    width: 29%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .editDeleteDiv{
+    height: 100%;
+    width: 33%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 19px;
+    align-items: center;
+  }
+  .editDeleteDiv1{
+    height: 13px;
+    padding: 16px 28px 16px 28px;
+    background-color: #7C5DFA;
+    border-radius: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 900;
+  }
+  .editDeleteDiv2{
+    height: 66px;
+    padding: 16px 23px 16px 23px;
+    background-color: #7C5DFA;
+    border-radius: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 900;
+    border: none;
+  }
+  .edit{
+    color: #7E88C3;
+    background-color: #F9FAFE;
+  }
+  .delete{
+    color: #FFFFFF;
+    background-color: #EC5757;
+  }
+  .markas{
+    color: #FFFFFF;
+    background-color: #7C5DFA;
+  }
+  .detailsDiv{
+    box-shadow: rgb(17 17 26 / 10%) 0px 8px 24px, rgb(17 17 26 / 10%) 0px 16px 56px, rgb(17 17 26 / 10%) 0px 24px 80px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: 100px 2fr 3fr 1fr;
+    grid-gap: 28px;
+    padding: 4% 8%;
+    width: 84%;
+    height: 88%;
+  }
+  .detailDiv1{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .id_description{
+    width: 13%;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .senderAddress{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+  }
+  .personId{
+    color: #373B53;
+    font-weight: 900;
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+ .dateEmailDiv{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 2fr 2fr;
+ }
+ .dateDiv{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+ }
+ .billTo{
+    width: 100%;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+ }
+ .ItemWholeDiv{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+ }
+ .ItemDiv{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    justify-content: space-between;
+    grid-gap: 120px;
+ }
+ .price{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+ }
+ .amountDue{
+    width: 100%;
+    height: 100%;
+    background-color: #373B53;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    border-radius: 0px 0px 10px 10px;
+ }
+.newInvoiceDivText1{
+  color: #7C5DFA;
+  margin-bottom: 17px;
+
+}
+.inputDiv1{
+  border: 1px solid #DFE3FA;
+  border-radius: 5px;
+  height: 59px;
+  width: 100%;
+  margin-bottom: 15px;
+  padding-left: 14px;
+  font-size: 19px;
+    font-weight: bold;
+}
+.ItemList{
+  color: #777F98;
+  font-size: 26px;
+  margin-bottom: 18px;
+}
+.grid_itemDiv{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3fr 1fr 2fr 2fr 20px;;
+  grid-gap: 15px;
+}
+.addItem{
+  width: 100%;
+  height: 69px;
+  background-color: #F9FAFE;
+  color: #7E88C3;
+  display: flex;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+}
+.addItem:hover,.edit:hover{
+  color: #7E88C3;
+  background-color: #DFE3FA;
+}
+.delete:hover{
+  background-color: #FF9797;
+}
+.markas:hover{
+  background-color: #9277FF;
+}
+.savechangeDiscard {
+  width: 100%;
+  height: 51px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  padding-bottom: 10px;
+  padding-top: 20px;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #FFFFFF; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 10px;
+  height: 100px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+.Discard{
+  margin-right: 96px;
+  
+  margin-left: 36px;
+  color: #7E88C3;
+  background-color: #F9FAFE;
+}
+.SaveDraft{
+  background-color: #373B53;
+  color: #888EB0;
+}
+select{
+  border: 1px solid #DFE3FA;
+  border-radius: 5px;
+  height: 59px;
+  width: 100%;
+  margin-bottom: 15px;
+  padding-left: 14px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.fa-trash{
+  width: 100%;
+  height: 47px;
+  font-size: 20px;
+  padding-top: 10px;
+  color: #acaaaa;
+}
+.fa-trash:hover{
+  color: red;
+}
+.cancelsaveDiv{
+  width: 100%;
+  height: 62px;
+  display: grid;
+  grid-template-columns: 358px 1fr;
+  grid-gap: 10px;
+  justify-items: end;
+}
+.opacityClass{
+  opacity: 0.5;
+}
+.alertDiv{
+  display: none;
+  width: 454px;
+  height: 249px;
+  position: absolute;
+  top: 377px;
+  left: 650px;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 40px;
+  padding-right: 40px;
+  z-index: 5;
+}
+.total{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.darkMood{
+  background-color:#1E2139;
+  color:white;
+  border:none
+}
+.imagediv{
+  display: flex;
+  height: 67%;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+}
+.darkshadow{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1;
+  opacity: 0.1;
+}
+.dislplayclass{
+  display: none;
+}

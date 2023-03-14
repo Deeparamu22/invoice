@@ -1,0 +1,81 @@
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script src="https://kit.fontawesome.com/fca89533a1.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<div class="darkshadow dislplayclass"></div>
+   <div class="whole_container">
+      <%-include('./partials/sideDiv'); %> 
+      <%-include('./partials/edit'); %>
+      <%-include('./partials/alert'); %>
+      <div class="view_invoice_page">
+          <div class="goBackClass" onclick="goback()">
+         <i class="fa-solid fa-chevron-left"></i>
+         <h3>Go back</h3>
+      </div>
+         <div class="statusEditDiv">
+            <div class="statusDiv">
+               <p style="text-align: center;" class="color1 description">Status</p>
+               <div class="status"><i class="fa-solid fa-circle"></i><p style="margin-left: 10px; font-weight: 900;"><%=object1.status%></p></div>
+            </div>
+            <div class="editDeleteDiv">
+               <div class="editDeleteDiv1 edit" id="edit">Edit</div>
+               <div class="editDeleteDiv1 delete" id="delete">Delete</div>
+               <a href="viewInvoice?id=<%=object1.id%>&changeStatus=change"><div class="editDeleteDiv1 markas" >Mark as Paid</div></a>
+            </div>
+         </div>
+         <div class="detailsDiv">
+            <div class="detailDiv1">
+               <div class="id_description">
+                  <div class="color1">#<span class="personId"><%=object1.id%></span></div>
+                  <p class="color1 description"><%=object1.description%></p>
+               </div>
+               <div class="senderAddress">
+                  <p class="color1" id="senderAdd1"><%=object1.senderAddress.street%></p>
+                  <p class="color1" id="senderAdd2"><%=object1.senderAddress.city%></p>
+                  <p class="color1" id="senderAdd3"><%=object1.senderAddress.postCode%></p>
+                  <p class="color1" id="senderAdd4"><%=object1.senderAddress.country%></p>
+               </div>
+            </div>
+            <div class="dateEmailDiv">
+               <div class="dateDiv">
+               <p class="color1">Invoice Date</p>
+               <h3 class="dueDate personId" style="margin-bottom: 10px;"><%=new Date(object1.createdAt).getDate();%> <%=["Jan", "Feb", "Mar", "Apr", "May", "June","July", "Aug", "Sep", "Oct", "Nov", "Dec"][new Date(object1.createdAt).getMonth()]%> <%=new Date(object1.createdAt).getFullYear();%></h3>
+               <p class="color1">Payment Date</p>
+               <h3 class="dueDate personId"><%=new Date(object1.paymentDue).getDate();%> <%=["Jan", "Feb", "Mar", "Apr", "May", "June","July", "Aug", "Sep", "Oct", "Nov", "Dec"][new Date(object1.paymentDue).getMonth()]%> <%=new Date(object1.paymentDue).getFullYear();%></h3>
+            </div>
+            <div class="billTo">
+               <p class="color1" style="margin-bottom: 10px">Bill To</p>
+               <h3 class="personId" id="clientName"><%=object1.clientName%></h3>
+               <p class="color1" id="clientAdd1"><%=object1.clientAddress.street%></p>
+                  <p class="color1" id="clientAdd2"><%=object1.clientAddress.city%></p>
+                  <p class="color1" id="clientAdd3"><%=object1.clientAddress.postCode%></p>
+                  <p class="color1" id="clientAdd4"><%=object1.clientAddress.country%></p>
+               </div>
+               <div>
+                  <p class="color1" style="margin-bottom: 10px">Send To</p>
+                  <p class="personId" id="clientEmail"><%=object1.clientEmail%></p>
+               </div>
+            </div>
+            <div class="ItemWholeDiv">
+            <div class="ItemDiv">
+               <p class="color1">Item Name</p>
+               <p class="color1 price">QTY</p>
+               <p class="color1 price">Price</p>
+               <p class="color1 price">Total</p>
+            </div>
+            <%object1.items.forEach(person=>{%> 
+               <div class="ItemDiv">
+                  <p class="personId"><%=person.name%></p>
+                  <p class="color1 price"><%=person.quantity%></p>
+                  <p class="color1 price">£<%=person.price%></p>
+                  <p class="personId price">£<%=person.total%></p>
+               </div>
+            <%});%>
+         </div>
+            <div class="amountDue">
+               <p style="margin-left:10px ;">Amount Due</p>
+               <h2 style="margin-right:10px; margin-top: 10px;">£<%=object1.total%></h2>
+            </div>
+         </div>
+      </div>
+   </div>
+<script src="js/script.js"></script>

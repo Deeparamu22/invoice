@@ -1,0 +1,21 @@
+
+<% if(object.length>0){%>
+  <% object.forEach(person=>{%> 
+    <a href="viewInvoice?id=<%=person.id%>"  onclick="window.location.href=''">
+  <div class="smallDiv" id=<%=person.id%>>
+          <div class="idStyle"><span class="color1">#</span><span class="personId"><%=person.id%></span></div>
+          <p class="color1 dueDate">Due <%=new Date(person.paymentDue).getDate();%> <%=["Jan", "Feb", "Mar", "Apr", "May", "June",
+              "July", "Aug", "Sep", "Oct", "Nov", "Dec"][new Date(person.paymentDue).getMonth()]%> <%=new Date(person.paymentDue).getFullYear();%></p>
+          <p class="color1 clientName"><%=person.clientName%></p>
+          <p class="totalStyle">£<%=person.total%></p>
+          <div class="status"><i class="fa-solid fa-circle"></i><p style="margin-left: 10px; font-weight: 900;"><%=person.status%></p></div>
+          <i class="fa-solid fa-chevron-right"></i>
+  </div></a>
+  <%})} else{%>
+    <div class="imagediv">
+      <img src="<%=image%>">
+      <h1>There is nothing here</h1>
+      <p class="color1">  Create an invoice by clicking the <br><b>New Invoice</b> button and get started</p>
+    </div>
+    <%}%>
+

@@ -1,0 +1,61 @@
+<div  id="newInvoiceDiv">
+    <div class="insideInvoiceDiv">
+        <h1 id="newInvoiceHead">New Invoices</h1>
+        <h3 class="newInvoiceDivText1 personId">Bill From</h3>
+      <form action="/index" method="post">
+           <p class="color1 invoiceText1">Street Address</p>
+           <input type="text" class="inputDiv1" required id="senderAddressstreet" name="senderAddressstreet" autocomplete="off">
+        <div class="citydiv">
+            <p class="color1 invoiceText1">City</p>
+            <p class="color1 invoiceText1">Post Code</p>
+            <p class="color1 invoiceText1">Country</p>
+            <input type="text" class="inputDiv1" required name="senderAddresscity" id="senderAddresscity">
+            <input type="text" class="inputDiv1" required name="senderAddresspostcode" id="senderAddresspostcode">
+            <input type="text" class="inputDiv1" required name="senderAddresscountry" id="senderAddresscountry">
+         </div>
+         <h3 class="newInvoiceDivText1 personId">Bill To</h3>
+            <p class="color1 invoiceText1">Client's Name</p>
+            <input type="text" class="inputDiv1" required name="clientName" id="clientName">
+            <p class="color1 invoiceText1">Client's Email</p>
+            <input type="text" class="inputDiv1" required name="clientEmail" id="clientEmail" placeholder="e.g. email@example.c">
+            <p class="color1 invoiceText1" >Street Address</p>
+            <input type="text" class="inputDiv1" required name="clientAddressstreet" id="clientAddressstreet">
+         <div class="citydiv">
+            <p class="color1 invoiceText1">City</p>
+            <p class="color1 invoiceText1">Post Code</p>
+            <p class="color1 invoiceText1">Country</p>
+            <input type="text" class="inputDiv1" required name="clientAddresscity" id="clientAddresscity">
+            <input type="text" class="inputDiv1" required name="clientAddresspostCode" id="clientAddresspostCode">
+            <input type="text" class="inputDiv1" required name="clientAddresscountry" id="clientAddresscountry">
+         </div>
+         <div class="date_div">
+            <p class="color1 invoiceText1">Invoice Date</p>
+            <p class="color1 invoiceText1">Payment Terms</p>
+            <input type="date" class="inputDiv1" required name="invoiceDate" id="invoiceDate">
+            <select name="paymentTerm" id="paymentTerm">
+               <option value="1">Net 1 Day</option>
+               <option value="7">Net 7 Days</option>
+               <option value="14">Net 14 Days</option>
+               <option value="30">Net 30 Days</option>
+             </select>
+         </div>
+            <p class="color1 invoiceText1">Project Description</p>
+            <input type="text" class="inputDiv1" name="description" id="description" placeholder="e.g. Graphic Design">
+            <h2 class="ItemList">Item List</h2>
+         <div class="grid_itemDiv">
+            <p class="color1 invoiceText1">ItemName</p>
+            <p class="color1 invoiceText1">Qty.</p>
+            <p class="color1 invoiceText1">Price</p>
+            <p class="color1 invoiceText1">Total</p>
+         </div>
+         <div class="itemListWholeDiv">
+      </div>
+         <div class="addItem"> + Add New Item</div>
+    </div>
+    <div class="savechangeDiscard">
+      <div class="editDeleteDiv1 Discard">Discard</div>
+      <input type="submit" value="Save as Draft" class="editDeleteDiv2 SaveDraft" name="submit" onclick="alertDivshow()">
+      <input type="submit" value="Save & Send" class="editDeleteDiv2 markas" name="submit" onclick="alertDivshow()">
+    </div>
+   </form>
+</div>

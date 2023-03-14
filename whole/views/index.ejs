@@ -1,0 +1,28 @@
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script src="https://kit.fontawesome.com/fca89533a1.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<div class="darkshadow dislplayclass"></div>
+<div class="whole_container" onload="alertDivshow()">
+<%-include('./partials/sideDiv'); %>
+<%-include('./partials/sideAnimationDiv'); %>
+<div id="main_div">
+    <div id="head_div">
+        <div>
+            <h1>Invoices</h1>
+            <count>There are <%=object.length%> total invoices</count>
+        </div>
+        <div id="filter" onclick="filterbarShow()"><p id="filterPara">Filter by status</p><i class="fa-solid fa-chevron-down filterSymbol"></i></div>
+        <div id="newInvoice">
+            <div id="plusDiv"><i class="fa-sharp fa-solid fa-plus"></i></div>
+            <p id="invoiceText">New Invoice</p>
+    
+        </div>
+    </div>
+    <div id="body_div">
+        <%-include('./partials/filterBox'); %>
+        <%-include('./partials/smallDiv'); %>
+    </div>
+</div>
+<div class="darkshadow dislplayclass"></div>
+</div>
+<script src="js/script.js"></script>
